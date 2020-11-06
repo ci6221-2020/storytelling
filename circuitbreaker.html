@@ -6,6 +6,7 @@
   <title>COVID-19 in Singapore - Circuit Breaker</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./css/timeline.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -16,7 +17,26 @@
       <p>Circuit Breaker</p>
     </div>
   </header>
-
+  <div class = "stats">
+		<div class = "latest-report">
+			<div class = "total-cases">
+				<div class = "title">Total Cases</div>
+				<div class = "value">0</div>
+				<div class = "new_value">+0</div>
+			</div>
+            <div class = "new-cases">
+                <div class ="title">New Cases</div>
+                <div class = "value">0</div>
+                <div class = "new_value">+0</div>
+            </div>
+			<div class= "deaths">
+				<div class= "title">Deaths</div>
+				<div class = "value">0</div>
+				<div class = "new_value">+0</div>
+			</div>
+		</div>
+        <div id= "chart", style= "overflow:auto;"></div>
+    </div>
   <section class="timeline">
     <div class="container">
 
@@ -153,7 +173,7 @@
 
     </div>
   </section>
-
+  <script src="./js/covidsingapore2.js"></script>
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js'></script>
   <script src="./js/timeline.js"></script>
