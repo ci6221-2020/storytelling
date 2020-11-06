@@ -20,22 +20,29 @@
     font-weight:bold;
 }
 
+
 .title{
     font-size:1.3eml;
 }
 
+.new-cases{
+    color:rgb(15, 109, 192)
+}
 #newcases{
-    font-size:2em;
+    font-size:3em;
     font-weight:bold;
     color:rgb(15, 109, 192);
 }
 #totalcases{
-    font-size:2em;
+    font-size:3em;
     font-weight: bold;
 }
 
+.deaths{
+    color:red;
+}
 #newdeaths {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
     color: red;
 }

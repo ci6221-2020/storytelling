@@ -58,7 +58,11 @@ function makePlotly(x, y, allRows) {
             zeroline: false
         },
         hovermode: "closest",
-        title: "Total Cases in Singapore",
+        title: "<b> New Cases in Singapore</b>",
+        titlefont:{
+            size: 32,
+            //family: "Pathway Gothic One"
+        },
         plot_bgcolor: "gainsboro",
         paper_bgcolor: "gainsboro",
     }
