@@ -1,6 +1,22 @@
 const barCol = 'grey';
 const hoveredBarCol = 'darkblue';
 
+let totalCasesList = [];
+var newCasesList = [];
+var deathList = [];
+
+function updateNewCases(index) {
+    document.getElementById("totalcases").innerHTML = totalCasesList[index];
+    document.getElementById("newcases").innerHTML = newCasesList[index];
+    document.getElementById("newdeaths").innerHTML = deathList[index];
+};
+
+function casesToZero(){
+    document.getElementById("totalcases").innerHTML = 0;
+    document.getElementById("newcases").innerHTML = 0;
+    document.getElementById("newdeaths").innerHTML = 0;
+}
+
 function makeplot() {
     Plotly.d3.csv("data/phase2.csv", function (data) { 
         processData(data) 
@@ -10,12 +26,15 @@ function makeplot() {
 
 function processData(allRows) {
 
-    var x = [], y = [], standard_deviation = [];
+    var x = [], y = [];
 
     for (var i = 0; i < allRows.length; i++) {
         row = allRows[i];
         x.push(row['date']);
         y.push(row['new_cases']);
+        totalCasesList.push(row['total_cases']);
+        newCasesList.push(row['new_cases']);
+        deathList.push(row['new_deaths']);
     }
     makePlotly(x, y, allRows);
 }
@@ -32,7 +51,9 @@ function makePlotly(x, y, allRows) {
     }];
 
     var layout = {
-
+    	xaxis:{
+    		range: ["2020-07-07","2020-08-07"]
+    	},
         yaxis: {
             showgrid: false,
             zeroline: false
@@ -54,6 +75,8 @@ function makePlotly(x, y, allRows) {
             tn ='',
             colors = [];
         pn = traces.points[0].pointNumber;
+
+        updateNewCases(pn);
         
         for (var i = 0; i < allRows.length; i++) {
             colors[i] = barCol;
@@ -71,6 +94,7 @@ function makePlotly(x, y, allRows) {
 
         pn = traces.points[0].pointNumber;
         
+        casesToZero();
         for (var i = 0; i < allRows.length; i++) {
             colors[i] = barCol;
         };

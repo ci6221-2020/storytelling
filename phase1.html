@@ -6,6 +6,8 @@
   <title>COVID-19 in Singapore - Phase 1</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./css/timeline.css">
+  <link rel="stylesheet" href="./css/graph.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
@@ -16,6 +18,23 @@
       <p>Phase 1: Safe Reopening</p>
     </div>
   </header>
+  <div class = "stats">
+		<div class = "latest-report">
+			<div class = "total-cases">
+				  <div class = "title">Total Cases</div>
+				  <div id = "totalcases">0</div>
+			</div>
+            <div class = "new-cases">
+                <div class ="title">New Cases</div>
+                <div id = "newcases">0</div>
+            </div>
+			<div class= "deaths">
+				<div class= "title">Deaths</div>
+				<div id = "newdeaths">0</div>
+			</div>
+		</div>
+        <div id= "chart", style= "overflow:auto;"></div>
+    </div>
 
   <section class="timeline">
     <div class="container">
@@ -151,7 +170,8 @@
       
     </div>
   </section>
-
+  
+  <script src='./js/phase1.js'></script>
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js'></script>
   <script src="./js/timeline.js"></script>

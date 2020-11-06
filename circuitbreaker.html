@@ -6,6 +6,7 @@
   <title>COVID-19 in Singapore - Circuit Breaker</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./css/timeline.css">
+  <link rel="stylesheet" href="./css/graph.css">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
@@ -20,19 +21,16 @@
   <div class = "stats">
 		<div class = "latest-report">
 			<div class = "total-cases">
-				<div class = "title">Total Cases</div>
-				<div class = "value">0</div>
-				<div class = "new_value">+0</div>
+				  <div class = "title">Total Cases</div>
+				  <div id = "totalcases">0</div>
 			</div>
             <div class = "new-cases">
                 <div class ="title">New Cases</div>
-                <div class = "value">0</div>
-                <div class = "new_value">+0</div>
+                <div id = "newcases">0</div>
             </div>
 			<div class= "deaths">
 				<div class= "title">Deaths</div>
-				<div class = "value">0</div>
-				<div class = "new_value">+0</div>
+				<div id = "newdeaths">0</div>
 			</div>
 		</div>
         <div id= "chart", style= "overflow:auto;"></div>
