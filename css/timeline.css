@@ -176,20 +176,30 @@ blockquote {
 }
 
 @media screen and (max-width: 1000px) {
+
   .timeline::before {
     left: 50px;
   }
+
   .timeline .timeline-img {
     left: 50px;
   }
+
   .timeline .timeline-content {
     max-width: 100%;
     width: auto;
     margin-left: 70px;
   }
+
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+
   .timeline .timeline-item:nth-child(even) .timeline-content {
     float: none;
   }
+
   .timeline .timeline-item:nth-child(odd) .timeline-content::after {
     content: '';
     position: absolute;
