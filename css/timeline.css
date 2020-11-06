@@ -46,7 +46,7 @@ header p {
 
 .timeline-item {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: -150px;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
@@ -175,7 +175,7 @@ blockquote {
   right: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .timeline::before {
     left: 50px;
   }
