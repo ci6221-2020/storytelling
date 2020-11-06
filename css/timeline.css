@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-  font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 17px;
   font-weight: 400;
   background-color: gainsboro;
@@ -22,23 +22,37 @@ header {
   background: #3F51B5;
   color: #FFFFFF;
   padding: 1%;
+  	background: #E8CBC0;
+	background: -webkit-linear-gradient(to right, #FFFFFF, #000000);
+	background: linear-gradient(to right, #FFFFFF, #000000);
 }
 
 header p {
-  font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
   color: rgba(255, 255, 255, 0.4);
   font-size: 60px;
 }
 
 .timeline {
   position: relative;
+  	background: #E8CBC0;
+	--background: -webkit-linear-gradient(to right, #E8CBC0, #636FA4);
+	--background: linear-gradient(to right, #E8CBC0, #636FA4);
+	background: -webkit-linear-gradient(to right, #FFFFFF, #000000);
+	background: linear-gradient(to right, #FFFFFF, #000000);
+}
+
+.timeline h2 {
+	font-family: "Times New Roman", Times, serif;
+	font-family: var(--font-secondary);
+	font-weight: 600;
 }
 
 .timeline::before {
   content: '';
-  background: #C5CAE9;
-  width: 10px;
-  height: 95%;
+  background: #e6e6e6;
+  width: 8px;
+  height: 90%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -101,7 +115,7 @@ header p {
 .timeline-img {
   width: 30px;
   height: 30px;
-  background: #3F51B5;
+  background: #FFFFFF;
   border-radius: 70%;
   position: absolute;
   left: 50%;
@@ -110,21 +124,22 @@ header p {
 }
 
 a {
-  background: #3F51B5;
-  color: #FFFFFF;
-  padding: 8px 20px;
-  text-transform: uppercase;
-  font-size: 14px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  display: inline-block;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.6);
+  --background: #3F51B5;
+  color: #000000;
+  --padding: 8px 20px;
+  --text-transform: uppercase;
+  --font-size: 24px;
+  --margin-bottom: 20px;
+  --margin-top: 10px;
+  --display: inline-block;
+  --border-radius: 2px;
+  --box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.6);
+  font-family: "Times New Roman", Times, serif;
 }
 
 a:hover, a:active, a:focus {
-  background: #32408f;
-  color: #FFFFFF;
+--  background: #808080;
+  color: #000000;
   text-decoration: none;
 }
 
@@ -141,7 +156,7 @@ a:hover, a:active, a:focus {
 }
 
 .timeline-item .timeline-img-header {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url("https://picsum.photos/1000/800/?random") center center no-repeat;
+  --background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url("https://picsum.photos/1000/800/?random") center center no-repeat;
   background-size: cover;
 }
 
@@ -166,13 +181,21 @@ blockquote {
 }
 
 .date {
-  background: #FF4081;
+  background: #808080;
   display: inline-block;
   color: #FFFFFF;
-  padding: 10px;
+  padding: 6px;
   position: absolute;
   top: 0;
   right: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bnt-more {
+	position: relative;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	background: #333333;
 }
 
 @media screen and (max-width: 768px) {
