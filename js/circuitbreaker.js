@@ -49,7 +49,7 @@ function makePlotly(x, y,allRows) {
             color: barCol,
             //opacity: '0.7'
         },
-        hovertemplate: '<b>Date:</b> <b> %{x|%d-%b}</b> <br><b>Value: </b> <b> %{y}</b><extra></extra>'
+        hovertemplate: '<b>Date:</b> <b> %{x|%d-%b}</b> <br><b>Cases: </b> <b> %{y}</b><extra></extra>'
     }];
 
 
