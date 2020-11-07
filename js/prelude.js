@@ -1,6 +1,6 @@
 const dataset = "data/prelude.csv";
-const barCol = 'darkblue';
-const hoveredBarCol = 'lightblue';
+const barCol = 'blue';
+const hoveredBarCol = 'darkblue';
 const viewRange = ["2020-02-24", "2020-03-31"];
 
 const lineCol = 'darkslategrey';

@@ -1,7 +1,7 @@
 const dataset = "data/circuitbreaker.csv";
-const barCol = 'darkblue';
-const hoveredBarCol = 'lightblue';
-const viewRange = ["2020-04-07", "2020-06-01"];
+const barCol = 'blue';
+const hoveredBarCol = 'darkblue';
+//const viewRange = ["2020-02-24", "2020-03-31"];
 
 const lineCol = 'darkslategrey';
 
@@ -109,6 +109,7 @@ function makePlotly(x, y,allRows, totalCasesList) {
                 //thickness:0.12
                 
             //},
+            //range:viewRange,
             showgrid: false,
             zeroline: false,
             tickformat: '%d-%b'

@@ -1,6 +1,6 @@
 const dataset = "data/phase2.csv";
-const barCol = 'darkblue';
-const hoveredBarCol = 'lightblue';
+const barCol = 'blue';
+const hoveredBarCol = 'darkblue';
 const viewRange = ["2020-06-19", "2020-8-31"];
 
 const lineCol = 'darkslategrey';
