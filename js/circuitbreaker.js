@@ -1,7 +1,7 @@
 const dataset = "data/circuitbreaker.csv";
-const barCol = 'blue';
-const hoveredBarCol = 'darkblue';
-//const viewRange = ["2020-02-24", "2020-03-31"];
+const barCol = 'rgba(255, 255, 255, 0.7);';
+const hoveredBarCol = '#007cc7';
+const viewRange = ["2020-04-07", "2020-06-01"];
 
 const lineCol = 'darkslategrey';
 
@@ -72,7 +72,8 @@ function makePlotly(x, y,allRows, totalCasesList) {
         marker: {
             color: barCol,
         },
-        hovertemplate: '<b>Date:</b> <b> %{x|%d-%b}</b> <br><b>Cases: </b> <b> %{y:.0f}</b><extra></extra>'
+        hoverinfo: "none",
+        //hovertemplate: 'Date: &nbsp; %{x|%d-%b}  <br>Cases: %{y:.0f}<extra></extra>'
     }];
 
     var traces2 = [{
@@ -88,7 +89,8 @@ function makePlotly(x, y,allRows, totalCasesList) {
         line:{
                 color: lineCol
         },
-        hovertemplate: '<b>Date:</b> <b> %{x|%d-%b}</b> <br><b>Total Cases: </b> <b> %{y:,.0f}</b><extra></extra>'
+        hoverinfo:'none'
+        //hovertemplate: 'Date: %{x|%d-%b} <br>Total Cases: %{y:,.0f}<extra></extra>'
     }]
 
     var layout = {
@@ -100,8 +102,7 @@ function makePlotly(x, y,allRows, totalCasesList) {
             title:{
                 text:'<b>Date</b>',
                 font:{
-                    size:20,
-                    color:'darkred'
+                    color:'darkslategrey'
                 }
             },
             //rangeslider:{
@@ -120,7 +121,7 @@ function makePlotly(x, y,allRows, totalCasesList) {
             title:{
                 text:"<b>New Cases</b>",
                 font:{
-                    color:barCol
+                    color:'darkslategrey'
                 }
             },
             showgrid: false,
@@ -141,19 +142,14 @@ function makePlotly(x, y,allRows, totalCasesList) {
             showgrid:false,
             rangemode: "tozero",
         },
-        hoverlabel:{
-            bgcolor: "white",
-            font:{
-                size: 16
-            }
-        },
         hovermode: "unified",
         title: "<b> COVID-19 Cases in Singapore</b>",
         titlefont:{
-            size: 32
+            size: 32,
+            family:"Helvetica Neue"
         },
-        plot_bgcolor: "gainsboro",
-        paper_bgcolor: "gainsboro"
+        plot_bgcolor: "#12232e",
+        paper_bgcolor: "#12232e"
     }
 
 

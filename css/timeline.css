@@ -10,7 +10,7 @@ body {
   font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 17px;
   font-weight: 400;
-  background-color: gainsboro;
+  background-color: #12232e;
 }
 
 h1 {
@@ -19,15 +19,21 @@ h1 {
 }
 
 header {
-  background: #3F51B5;
+  background: #203647;
   color: #FFFFFF;
   padding: 1%;
 }
 
 header p {
   font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 60px;
+}
+
+header h1{
+  font-family: 'Pathway Gothic One', Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 30px;
 }
 
 .timeline {
@@ -36,7 +42,7 @@ header p {
 
 .timeline::before {
   content: '';
-  background: #C5CAE9;
+  background: #203647;
   width: 10px;
   height: 95%;
   position: absolute;
@@ -82,7 +88,7 @@ header p {
   width: 45%;
   padding: 10px 30px;
   border-radius: 4px;
-  background: #f5f5f5;
+  background: #eefbfb;
   box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
 }
 
@@ -101,7 +107,7 @@ header p {
 .timeline-img {
   width: 30px;
   height: 30px;
-  background: #3F51B5;
+  background: #203647;
   border-radius: 70%;
   position: absolute;
   left: 50%;
@@ -115,7 +121,7 @@ header p {
 }
 
 a {
-  background: #3F51B5;
+  background: #203647;
   color: #FFFFFF;
   padding: 8px 20px;
   text-transform: uppercase;
@@ -128,7 +134,7 @@ a {
 }
 
 a:hover, a:active, a:focus {
-  background: #32408f;
+  background: #007cc7;
   color: #FFFFFF;
   text-decoration: none;
 }
@@ -171,7 +177,7 @@ blockquote {
 }
 
 .date {
-  background: #FF4081;
+  background: #203647;
   display: inline-block;
   color: #FFFFFF;
   padding: 10px;

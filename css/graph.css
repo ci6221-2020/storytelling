@@ -15,23 +15,23 @@
 }
 
 .hovered-date {
-    color: brown
+    color: #ff5733
 }
 
 .total-cases {
-    color: darkslategrey
+    color: #309b94
 }
 
 .new-cases {
-    color: darkblue
+    color: #007cc7
 }
 
 .deaths {
-    color: darkred;
+    color: #c70039;
 }
 
 #chart .modebar-btn {
-    background: gainsboro;
+    background: #12232e;
 }
 
 #chart .clicked path {
