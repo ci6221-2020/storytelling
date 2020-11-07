@@ -2,9 +2,10 @@
     margin-top: 3em;
     display: flex;
     text-align: center;
+    margin-bottom:3em;
 }
 
-.hovered-date, .total-cases, .new-cases, .deaths {
+.hovered-date, .total-cases, .new-cases, .deaths  {
     width: 25%;
 }
 
