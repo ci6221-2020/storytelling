@@ -65,6 +65,7 @@ function makePlotly(x, y, allRows) {
         },
         plot_bgcolor: "gainsboro",
         paper_bgcolor: "gainsboro",
+        autosize: false
     }
 
     Plotly.newPlot('chart', traces, layout);

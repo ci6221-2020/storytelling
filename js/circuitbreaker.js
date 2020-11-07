@@ -2,8 +2,8 @@ const barCol = 'grey';
 const hoveredBarCol = 'darkblue';
 
 let totalCasesList = [];
-var newCasesList = [];
-var deathList = [];
+let newCasesList = [];
+let deathList = [];
 
 function updateNewCases(index) {
     document.getElementById("totalcases").innerHTML = totalCasesList[index];
@@ -36,10 +36,11 @@ function processData(allRows) {
         newCasesList.push(row['new_cases']);
         deathList.push(row['new_deaths']);
     }
-    makePlotly(x, y, allRows);
+    makePlotly(x, y,allRows);
 }
 
-function makePlotly(x, y, allRows) {
+function makePlotly(x, y,allRows) {
+    
     var traces = [{
         x: x,
         y: y,
@@ -47,30 +48,49 @@ function makePlotly(x, y, allRows) {
         marker: {
             color: barCol,
             //opacity: '0.7'
-        }
+        },
+        hovertemplate: '<b>Date:</b> <b> %{x|%d-%b}</b> <br><b>Value: </b> <b> %{y}</b><extra></extra>'
     }];
+
 
     var layout = {
     	xaxis:{
-    		autorange: true
+            title:{
+                text:'<b>Date</b>',
+                font:{
+                    size:20
+                }
+            },
+            rangeslider:{
+                range:["2020-04-07","2020-06-01"],
+                thickness:0.12
+            }
     	},
         yaxis: {
+            title: {
+                text:"<b>Number of Cases</b>",
+                font:{
+                    size:20
+                }
+            },
             showgrid: false,
-            zeroline: false
-           
+            zeroline: false 
         },
-
+        hoverlabel:{
+            bgcolor: "white",
+            font:{
+                size: 16
+            }
+        },
         hovermode: "closest",
         title: "<b> New Cases in Singapore</b>",
         titlefont:{
-            size: 32,
-            //family: "Pathway Gothic One"
+            size: 32
         },
         plot_bgcolor: "gainsboro",
         paper_bgcolor: "gainsboro"
     }
-
-    Plotly.newPlot('chart', traces, layout);
+    Plotly.newPlot('chart', traces, layout, {responsive:true});
 
     var plotDiv = document.getElementById("chart");
 
