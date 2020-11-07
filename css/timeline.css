@@ -109,6 +109,11 @@ header p {
   margin-left: -15px;
 }
 
+.images {
+	width: 100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 a {
   background: #3F51B5;
   color: #FFFFFF;
