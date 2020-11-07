@@ -1,56 +1,38 @@
-.stats{
-    width: 100%;
-    background-size: cover;
-}
-
-.latest-report{
+.latest-report {
+    margin-top: 3em;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 50px;
+    text-align: center;
 }
 
-.total-cases,
-.new-cases,
-.deaths{
-    height: 100px;
-    font-weight:bold;
+.hovered-date, .total-cases, .new-cases, .deaths {
+    width: 25%;
 }
 
-
-.title{
-    font-size:1.3eml;
-}
-
-.new-cases{
-    color:rgb(15, 109, 192)
-}
-#newcases{
-    font-size:3em;
-    font-weight:bold;
-    color:rgb(15, 109, 192);
-}
-#totalcases{
-    font-size:3em;
-    font-weight: bold;
-}
-
-.deaths{
-    color:red;
-}
-#newdeaths {
+#hovereddate, #totalcases, #newcases, #newdeaths {
     font-size: 3em;
     font-weight: bold;
-    color: red;
+}
+
+.hovered-date {
+    color: brown
+}
+
+.total-cases {
+    color: darkslategrey
+}
+
+.new-cases {
+    color: darkblue
+}
+
+.deaths {
+    color: darkred;
 }
 
 #chart .modebar-btn {
     background: gainsboro;
 }
-  
-#chart .clicked path{
+
+#chart .clicked path {
     fill: rgba(0, 0, 0, 1);
 }

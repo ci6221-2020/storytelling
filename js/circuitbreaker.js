@@ -1,25 +1,40 @@
+const dataset = "data/circuitbreaker.csv";
 const barCol = 'grey';
 const hoveredBarCol = 'darkblue';
+const viewRange = ["2020-04-07", "2020-06-01"];
 
+let dateList = [];
 let totalCasesList = [];
 let newCasesList = [];
 let deathList = [];
 
+function getDate(d) {
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const date = new Date(d);
+    return date.getDate() + " " + monthNames[date.getMonth()];
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function updateNewCases(index) {
-    document.getElementById("totalcases").innerHTML = totalCasesList[index];
-    document.getElementById("newcases").innerHTML = newCasesList[index];
+    document.getElementById("hovereddate").innerHTML = getDate(dateList[index]);
+    document.getElementById("totalcases").innerHTML = numberWithCommas(totalCasesList[index]);
+    document.getElementById("newcases").innerHTML = numberWithCommas(newCasesList[index]);
     document.getElementById("newdeaths").innerHTML = deathList[index];
 };
 
-function casesToZero(){
-    document.getElementById("totalcases").innerHTML = 0;
-    document.getElementById("newcases").innerHTML = 0;
-    document.getElementById("newdeaths").innerHTML = 0;
+function casesToZero() {
+    document.getElementById("hovereddate").innerHTML = "-";
+    document.getElementById("totalcases").innerHTML = "-";
+    document.getElementById("newcases").innerHTML = "-";
+    document.getElementById("newdeaths").innerHTML = "-";
 }
 
 function makeplot() {
-    Plotly.d3.csv("data/circuitbreaker.csv", function (data) { 
-        processData(data) 
+    Plotly.d3.csv(dataset, function (data) {
+        processData(data)
     });
 
 };
@@ -32,98 +47,71 @@ function processData(allRows) {
         row = allRows[i];
         x.push(row['date']);
         y.push(row['new_cases']);
+
+        dateList.push(row['date']);
         totalCasesList.push(row['total_cases']);
         newCasesList.push(row['new_cases']);
         deathList.push(row['new_deaths']);
     }
-    makePlotly(x, y,allRows);
+
+    makePlotly(x, y, allRows);
 }
 
-function makePlotly(x, y,allRows) {
-    
+function makePlotly(x, y, allRows) {
     var traces = [{
         x: x,
         y: y,
         type: 'bar',
         marker: {
             color: barCol,
-            //opacity: '0.7'
-        },
-        hovertemplate: '<b>Date:</b> <b> %{x|%d-%b}</b> <br><b>Cases: </b> <b> %{y}</b><extra></extra>'
+        }
     }];
 
-
     var layout = {
-    	xaxis:{
-            title:{
-                text:'<b>Date</b>',
-                font:{
-                    size:20
-                }
-            },
-            rangeslider:{
-                range:["2020-04-07","2020-06-01"],
-                thickness:0.12
-            }
-    	},
+        xaxis: {
+            range: viewRange
+        },
         yaxis: {
-            title: {
-                text:"<b>Number of Cases</b>",
-                font:{
-                    size:20
-                }
-            },
             showgrid: false,
-            zeroline: false 
+            zeroline: false
+
         },
-        hoverlabel:{
-            bgcolor: "white",
-            font:{
-                size: 16
-            }
-        },
+
         hovermode: "closest",
-        title: "<b> New Cases in Singapore</b>",
-        titlefont:{
-            size: 32
-        },
         plot_bgcolor: "gainsboro",
         paper_bgcolor: "gainsboro"
     }
-    Plotly.newPlot('chart', traces, layout, {responsive:true});
+
+    Plotly.newPlot('chart', traces, layout, { responsive: true });
 
     var plotDiv = document.getElementById("chart");
 
-    plotDiv.on('plotly_hover', function(traces){
-        var pn ='',
-            tn ='',
+    plotDiv.on('plotly_hover', function (traces) {
+        var index = traces.points[0].pointNumber,
             colors = [];
-        pn = traces.points[0].pointNumber;
 
-        updateNewCases(pn);
-        
+        updateNewCases(index);
+
         for (var i = 0; i < allRows.length; i++) {
             colors[i] = barCol;
         };
 
-        colors[pn] = hoveredBarCol;
-        var update={'marker':{color: colors}};
+        colors[index] = hoveredBarCol;
+        var update = { 'marker': { color: colors } };
         Plotly.restyle('chart', update);
     })
 
-    plotDiv.on('plotly_unhover', function(traces){
-        var pn ='',
-            tn ='',
+    plotDiv.on('plotly_unhover', function (traces) {
+        var index = traces.points[0].pointNumber,
             colors = [];
 
-        pn = traces.points[0].pointNumber;
-        
         casesToZero();
+
         for (var i = 0; i < allRows.length; i++) {
             colors[i] = barCol;
         };
 
-        var update={'marker':{color: colors}};
+        var update = { 'marker': { color: colors } };
         Plotly.restyle('chart', update);
     });
 };
