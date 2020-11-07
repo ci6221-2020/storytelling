@@ -6,114 +6,199 @@
   <title>COVID-19 in Singapore - Circuit Breaker</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./css/timeline.css">
+  <link rel="stylesheet" href="./css/graph.css">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
 
   <header>
     <div class="container text-center">
-      <h1>Circuit Breaker</h1>
-      <p></p>
+      <p>Circuit Breaker</p>
+      <h1>7 Apr 2020 - 1 Jun 2020</h1>
     </div>
   </header>
-
+  <div class = "stats">
+		<div class = "latest-report">
+			<div class = "total-cases">
+				  <div class = "title">Total Cases</div>
+				  <div id = "totalcases">0</div>
+			</div>
+            <div class = "new-cases">
+                <div class ="title">New Cases</div>
+                <div id = "newcases">0</div>
+            </div>
+			<div class= "deaths">
+				<div class= "title">Deaths</div>
+				<div id = "newdeaths">0</div>
+			</div>
+		</div>
+        <div id= "chart", style= "overflow:auto;"></div>
+    </div>
   <section class="timeline">
     <div class="container">
-      <div class="timeline-item">
-        <div class="timeline-img"></div>
-
-        <div class="timeline-content js--fadeInLeft">
-          <h2>CB Announcement</h2>
-          <div class="date">3 APR 2020</div>
-          <p><a href="https://www.channelnewsasia.com/news/singapore/coronavirus-covid-19-lee-hsien-loong-update-address-nation-tv-12606328" target="_blank">Government gives reusable masks to all households, previously advice to wear the masks only when unwell and visiting a doctor. </a>
-          </p>
-          <img src="/image/masks.jpg" width="100%"></img>
-        </div>
-      </div>
 
       <div class="timeline-item">
-
         <div class="timeline-img"></div>
-
-        <div class="timeline-content timeline-card js--fadeInRight">
-          <div class="timeline-img-header" style="background-image:url('https://www.straitstimes.com/sites/default/files/styles/article_pictrure_780x520_/public/articles/2020/04/07/photo6079925622722898386.jpg?itok=C2JFMEDF&timestamp=1586264160');">
-            <h2>CB Commences</h2>
+        <div class="timeline-content timeline-card js--fadeInLeft">
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://www.asiaone.com/sites/default/files/original_images/Apr2020/200402_teacup_screengrab.jpg') center center no-repeat">
+            <h2>Announcement of Circuit Breaker</h2>
           </div>
-          <div class="date">7 APR 2020</div>
-          <p><a href="https://www.moh.gov.sg/news-highlights/details/speech-by-mr-gan-kim-yong-minister-for-health-at-the-second-reading-of-covid-19-(temporary-measures)-bill-7-april-2020" target="_blank">A new Bill was passed that allows the Minister to issue regulations to control the spread of COVID-19 <br>(A near-empty Marina Boulevard on April 7, 2020) </a>
-          </p>         
+          <div class="date">3 Apr 2020</div>
+          <p>Singapore announces a stricter set of measures from 7 April, collectively called a "circuit breaker".</p>
+          <p>The circuit breaker is estimated to end at 4 May.</p>
+          <a class="bnt-more" href="https://www.channelnewsasia.com/news/singapore/coronavirus-covid-19-lee-hsien-loong-update-address-nation-tv-12606328">More</a>
         </div>
       </div>
 
       <div class="timeline-item">
-
         <div class="timeline-img"></div>
+        <div class="timeline-content timeline-card js--fadeInRight">
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://www.straitstimes.com/sites/default/files/styles/article_pictrure_780x520_/public/articles/2020/05/25/yq-crhc-25052022.jpg?itok=59eWdq-L&timestamp=1590403467') center center no-repeat">
+            <h2>Circuit Breaker commences</h2>
+          </div>
+          <div class="date">7 Apr 2020</div>
+          <p>All non-essential workplaces and services involving close contact were shut down.</p>
+          <p>Wearing of masks became mandatory, applicable to everyone when not at home.</p>
+          <p>All food establishments were only allowed to offer take-away, drive-thru and delivery of food.</p>
+          <a class="bnt-more" href="https://www.straitstimes.com/singapore/coronavirus-spore-reports-first-cases-of-local-transmission-4-out-of-6-new-cases-did-not">More</a>
+        </div>
+      </div>
 
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
         <div class="timeline-content js--fadeInLeft">
-          <div class="date">8 APR 2020</div>
-          <h2>Biggest Dorm Closed</h2>
-          <p><a href="https://www.channelnewsasia.com/news/singapore/covid-19-singapore-biggest-cluster-s11-dormitory-closes-13003362" target="_blank">The S11 dormitory was one of Singapore’s first dormitory clusters was identified, also the largest COVID-19 cluster in Singapore.
-		  </a></p>
+          <br />
+          <h2>Singapore's biggest dormitory closed</h2>
+          <div class="date">8 Apr 2020</div>
+          <br />
+          <p>The S11 dormitory was one of Singapore’s first dormitory clusters was identified, also the largest COVID-19 cluster in Singapore.</p>
+          <br />
+          <img src="https://www.straitstimes.com/sites/default/files/styles/article_pictrure_780x520_/public/articles/2020/04/17/nz_dorm_150422.jpg?itok=2_HBBcLO&timestamp=1587074505" width="100%"/>
+          <br /><br />
         </div>
       </div>
 
       <div class="timeline-item">
-
         <div class="timeline-img"></div>
+        <div class="timeline-content timeline-card js--fadeInRight">
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://www.todayonline.com/sites/default/files/styles/new_app_article_detail/public/photos/43_images/202004013_raj_zoom4.jpg?itok=gSvA1aPv') center center no-repeat">
+            <h2>MOE suspends Zoom for home-based learning</h2>
+          </div>
+          <div class="date">9 Apr 2020</div>
+          <p>Following a Zoom meeting incident, MOE stopped using Zoom for home-based learning as a precautionary measure.</p>
+          <p>The Zoom meeting hijack happened during a geography lesson for a secondary one class, such that hackers hijacked the stream and showed the students obscene pictures.</p>
+          <a class="bnt-more" href="https://www.straitstimes.com/singapore/hackers-hijack-home-based-lessons-on-zoom-to-allegedly-show-obscene-photos-to-children">More</a>
+        </div>
+      </div>
+      
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
+        <div class="timeline-content timeline-card js--fadeInLeft">
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://nestia-food.obs.ap-southeast-3.myhuaweicloud.com/202003/20/801f3d5c3c4a8e57544d6c4e2f968525.jpg') center center no-repeat">
+            <h2>Mandatory to wear a mask when not at home</h2>
+          </div>
+          <div class="date">14 Apr 2020</div>
+          <p>Minister for National Development Lawrence Wong announced that wearing a mask when outside home is compulsory.</p>
+        <p>Individuals who failed to comply will be liable to $300 for their first offence, and $1,000 for their second offence.</p>
+          <a class="bnt-more" href="https://www.channelnewsasia.com/news/singapore/covid19-wearing-masks-compulsory-lawrence-wong-12640828">More</a>
+        </div>
+      </div>
 
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
         <div class="timeline-content js--fadeInRight">
-          <h2>Total number of cases pasts 5000</h2>
-          <div class="date">17 APR 2020</div>
-          <p><a href="https://www.channelnewsasia.com/news/singapore/coronavirus-covid-19-moh-update-623-new-cases-foreign-workers-12652286" target="_blank"><img src="https://www.channelnewsasia.com/image/12653986/0x0/1550/2755/bb9e6e026fcb258baecda1efdccbd599/pc/singapore-covid-19-cases-grafas-apr-18.png" width="100%"></img>
-		  </a>
-          </p>
-          
+          <h2>Singapore's total COVID-19 cases hits 5,000 mark</h2>
+          <br />
+          <div class="date">17 Apr 2020</div>
+          <img src="https://www.channelnewsasia.com/image/12653986/0x0/1550/2755/bb9e6e026fcb258baecda1efdccbd599/pc/singapore-covid-19-cases-grafas-apr-18.png", width="100%">
+          <br /><br />
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-img"></div>
         <div class="timeline-content timeline-card js--fadeInLeft">
-          <div class="timeline-img-header" style="background-image:url('https://www.straitstimes.com/sites/default/files/styles/article_pictrure_780x520_/public/articles/2020/04/21/pm3.jpg?itok=DLJOy-KB&timestamp=1587468295');">
-            <h2>CB measures extend</h2>
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTISu5kWe2Vi6bDlrwG4bqOeikrr393e5fUjA&usqp=CAU">
+            <h2>McDonald's Singapore to suspend all operations until 4 May</h2>
           </div>
-          <div class="date">21 APR 2020</div>
-          <p><a href="https://www.straitstimes.com/politics/prime-minister-lee-hsien-loong-to-address-nation-on-covid-19-situation-at-5pm" target="_blank">PM Lee announces that the circuit breaker measures will be extended till June 1. The measures are also tightened, with barber and bubble tea shops closing.</a>
-          </p>
-          
+          <div class="date">19 Apr 2020</div>
+          <p>As advised by the MOH as a preventive measure to reduce the virus spread, McDonald's Singapore will close all operations, including McDelivery and Drive-Thru.</p>
+          <p>Earlier in April, 5 McDonald's employees were diagnosed with COVID-19, forming a cluster of linked cases at various outlets.</p>
+          <a class="bnt-more" href="https://www.channelnewsasia.com/news/singapore/covid19-mcdonalds-singapore-suspends-all-operations-12656294">More</a>
         </div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-img"></div>
         <div class="timeline-content timeline-card js--fadeInRight">
-          <div class="timeline-img-header" style="background-image: url('https://www.straitstimes.com/sites/default/files/articles/2020/05/01/imgonline-com-ua-frameblurred-v8jllfdt07.png');">
-            <h2></h2>
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://i0.wp.com/dl.img-news.com/dl/img/s2/dl/2020/04/106475913-1586151581173gettyimages-1208943870.jpeg?ssl=1') center center no-repeat">
+            <h2>Circuit Breaker extended to 1 Jun, Essential services tightened</h2>
           </div>
-          <div class="date">1 MAY 2020</div>
-          <p><a href="https://www.straitstimes.com/singapore/health/102-year-old-who-is-singapores-oldest-coronavirus-survivor-was-discharged-today#:~:text=SINGAPORE%20%2D%20Madam%20Yap%20Lay%20Hong,on%20Friday%20(May%201)." target="_blank">Singapore's oldest coronavirus patient, a 102-year-old woman, is discharged from Tan Tock Seng Hospital. </a>
-          </p>
-          
-        </div>
-      </div>
-	  
-	  <div class="timeline-item">
-        <div class="timeline-img"></div>
-        <div class="timeline-content js--fadeInLeft">
-          <div>
-            <h2>T4 suspended indefinitely</h2>
-          </div>
-          <div class="date">16 MAY 2020</div>
-          <p><a href="https://www.channelnewsasia.com/news/singapore/covid-19-changi-airport-terminal-4-suspend-operations-12723918" target="_blank">Changi Airport Terminal 4 will be suspended indefinitely from 16 May, reopening only when demand resumes.</a>
-          </p>
-          <img src="/image/visitors.jpg" width="100%"></img>
+          <div class="date">21 Apr 2020</div>
+          <p>Pertaining to a sustained number of unlinked cases in the community, the Circuit Breaker will be extended to 1 June.</p>
+          <p>Stricter measures were imposed, such as tightening the list of essential services, restricting entry to wet markets and workers residing in dormitories were prohibited from working.</p>
+          <a class="bnt-more" href="https://www.straitstimes.com/politics/prime-minister-lee-hsien-loong-to-address-nation-on-covid-19-situation-at-5pm">More</a>
         </div>
       </div>
 
-      
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
+        <div class="timeline-content timeline-card js--fadeInLeft">
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://www.straitstimes.com/sites/default/files/styles/article_pictrure_780x520_/public/articles/2020/05/01/ST_20200501_CHANGI01_5638247.jpg?itok=Zt1mqoh3&timestamp=1588272544') center center no-repeat">
+            <h2>Changi Airport Terminal 2 will suspend operations for 18 months</h2>
+          </div>
+          <div class="date">30 Apr 2020</div>
+          <p></p>
+          <p>As the airport cuts costs during the COVID-19 pandemic, and proceed on planned upgrade works, Changi Airport Terminal 2 will be closed for 18 months.</p>
+          <p>The last plane departed for Tokyo yesterday at about 6:10am.</p>
+          <a class="bnt-more" href="https://www.straitstimes.com/singapore/transport/changi-airport-t2-closes-today-upgrade-works-to-be-accelerated">More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
+        <div class="timeline-content js--fadeInRight">
+          <img src="https://www.straitstimes.com/sites/default/files/articles/2020/05/01/imgonline-com-ua-frameblurred-v8jllfdt07.png" width="100%">
+          <h2>Singapore's oldest COVID-19 patient discharged from hospital</h2>
+          <br />
+          <div class="date">1 May 2020</div>
+          <p>Madam Yap, 102, was among the 16 residents and staff at the Lee Ah Mooi Old Age Home who caught the virus.</p>
+          <p>She was the oldest COVID-19 survivor who was discharged from Tan Tock Seng Hospital today.</p>
+          <a class="bnt-more" href="https://www.straitstimes.com/singapore/health/102-year-old-who-is-singapores-oldest-coronavirus-survivor-was-discharged-today#:~:text=SINGAPORE%20%2D%20Madam%20Yap%20Lay%20Hong,on%20Friday%20(May%201).">More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
+        <div class="timeline-content timeline-card js--fadeInLeft">
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://cna-sg-res.cloudinary.com/image/upload/q_auto,f_auto/image/7740780/16x9/991/557/f9d0756899a0b1e17e3b384ef0e0c3f0/bb/acupuncture---2171936.jpg') center center no-repeat">
+            <h2>Minor ease of Circuit Breaker measures</h2>
+          </div>
+          <div class="date">5 May 2020</div>
+          <p></p>
+          <p>Traditional Chinese Medicine (TCM) clinics are permitted to open to sell retail products and perform needle acupuncture for pain management.</p>
+          <p>Restrictions on activities within the grounds of strata-titled residences such as condominiums or other private residential developments will be lifted.</p>
+          <a class="bnt-more" href="https://www.channelnewsasia.com/news/singapore/circuit-breaker-singapore-adjustments-acupuncture-12696440">More</a>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
+        <div class="timeline-content timeline-card js--fadeInRight">
+          <div class="timeline-img-header" style="background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url('https://www.straitstimes.com/sites/default/files/styles/x_large/public/articles/2020/05/12/rk_changiairport-t4_120520.jpg?itok=CSsH8rz5&timestamp=1589257530')">
+            <h2>Changi Airport Terminal 4 will suspend operations</h2>
+          </div>
+          <div class="date">16 May 2020</div>
+          <p>Following the suspension of Terminal 2, Terminal 4 will suspend its operation starting 16 May 2020 to save on running costs such as utilities and cleaning.</p>
+          <p>Stores and restaurants in T4 will close and the shuttle bus service connecting to T3 will be suspended until operations in T4 resume.</p>
+          <a class="bnt-more" href="https://www.straitstimes.com/singapore/transport/coronavirus-changi-airport-terminal-4-to-suspend-operations-from-may-16">More</a>
+        </div>
+      </div>
+
     </div>
   </section>
-
+  <script src="./js/circuitbreaker.js"></script>
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
   <script src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js'></script>
   <script src="./js/timeline.js"></script>
