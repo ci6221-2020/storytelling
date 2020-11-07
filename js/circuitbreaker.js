@@ -113,14 +113,22 @@ function makePlotly(x, y,allRows, totalCasesList) {
 
         yaxis: {
             title:{
-                text:"<b>New Cases</b>"
+                text:"<b>New Cases</b>",
+                font:{
+                    color:"darkblue"
+                }
             },
             showgrid: false,
             zeroline: false,
             anchor: 'x'
         },
         yaxis2:{
-            title:"<b>Total Cases</b>",
+            title:{
+                text:"<b>Total Cases</b>",
+                font:{
+                    color:"red"
+                }
+            },
             overlaying:'y',
             side: 'right',
             anchor: 'x',
