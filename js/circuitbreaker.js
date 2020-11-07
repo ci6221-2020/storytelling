@@ -1,6 +1,6 @@
 const dataset = "data/circuitbreaker.csv";
 const barCol = 'darkblue';
-const hoveredBarCol = 'darkblue';
+const hoveredBarCol = 'lightblue';
 const viewRange = ["2020-04-07", "2020-06-01"];
 
 const lineCol = 'darkslategrey';
