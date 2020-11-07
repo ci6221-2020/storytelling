@@ -1,9 +1,9 @@
 const dataset = "data/circuitbreaker.csv";
-const barCol = 'grey';
+const barCol = 'darkblue';
 const hoveredBarCol = 'darkblue';
 const viewRange = ["2020-04-07", "2020-06-01"];
 
-const lineCol = 'black';
+const lineCol = 'darkslategrey';
 
 
 let dateList = [];
@@ -100,7 +100,8 @@ function makePlotly(x, y,allRows, totalCasesList) {
             title:{
                 text:'<b>Date</b>',
                 font:{
-                    size:20
+                    size:20,
+                    color:'darkred'
                 }
             },
             //rangeslider:{
@@ -109,14 +110,16 @@ function makePlotly(x, y,allRows, totalCasesList) {
                 
             //},
             showgrid: false,
-            zeroline: false
+            zeroline: false,
+            tickformat: '%d-%b'
+
     	},
 
         yaxis: {
             title:{
                 text:"<b>New Cases</b>",
                 font:{
-                    color:"darkblue"
+                    color:barCol
                 }
             },
             showgrid: false,
@@ -127,7 +130,7 @@ function makePlotly(x, y,allRows, totalCasesList) {
             title:{
                 text:"<b>Total Cases</b>",
                 font:{
-                    color:"red"
+                    color:"darkslategrey"
                 }
             },
             overlaying:'y',
@@ -144,7 +147,7 @@ function makePlotly(x, y,allRows, totalCasesList) {
             }
         },
         hovermode: "unified",
-        title: "<b> New Cases in Singapore</b>",
+        title: "<b> COVID-19 Cases in Singapore</b>",
         titlefont:{
             size: 32
         },
