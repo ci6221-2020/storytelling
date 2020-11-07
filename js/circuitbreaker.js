@@ -103,10 +103,11 @@ function makePlotly(x, y,allRows, totalCasesList) {
                     size:20
                 }
             },
-            rangeslider:{
-                range:viewRange,
-                thickness:0.12
-            },
+            //rangeslider:{
+                //range:viewRange,
+                //thickness:0.12
+                
+            //},
             showgrid: false,
             zeroline: false
     	},
