@@ -1,10 +1,8 @@
 const dataset = "data/circuitbreaker.csv";
+const lineCol = 'darkslategrey';
 const barCol = 'rgba(255, 255, 255, 0.7);';
 const hoveredBarCol = '#007cc7';
 const viewRange = ["2020-04-07", "2020-06-01"];
-
-const lineCol = 'darkslategrey';
-
 
 let dateList = [];
 let totalCasesList = [];
@@ -58,12 +56,11 @@ function processData(allRows) {
         deathList.push(row['new_deaths']);
         //totalDeathList.push(row['total_deaths']);
     }
-    makePlotly(x, y,allRows, totalCasesList);
+    makePlotly(x, y, allRows, totalCasesList);
 }
 
-function makePlotly(x, y,allRows, totalCasesList) {
+function makePlotly(x, y, allRows, totalCasesList) {
     
-
     var traces = [{
         x: x,
         y: y,
@@ -77,83 +74,83 @@ function makePlotly(x, y,allRows, totalCasesList) {
     }];
 
     var traces2 = [{
-        x:x,
-        y:totalCasesList,
+        x: x,
+        y: totalCasesList,
         type: 'scatter',
         name: "Total Cases",
         yaxis: 'y2',
-        mode:'lines+markers',
-        marker:{
-            size:6
-            },
-        line:{
-                color: lineCol
+        mode: 'lines+markers',
+        marker: {
+            size: 6
         },
-        hoverinfo:'none'
+        line: {
+            color: lineCol
+        },
+        hoverinfo: 'none'
         //hovertemplate: 'Date: %{x|%d-%b} <br>Total Cases: %{y:,.0f}<extra></extra>'
     }]
 
     var layout = {
         showlegend: true,
-        legend:{
-            orientation:"h"
+        legend: {
+            orientation: "h"
         },
-        xaxis:{
-            title:{
-                text:'<b>Date</b>',
-                font:{
-                    color:'darkslategrey'
+        xaxis: {
+            title: {
+                text: '<b>Date</b>',
+                font: {
+                    color: 'darkslategrey'
                 }
             },
             //rangeslider:{
-                //range:viewRange,
-                //thickness:0.12
-                
+            //range:viewRange,
+            //thickness:0.12
+
             //},
             //range:viewRange,
             showgrid: false,
             zeroline: false,
             tickformat: '%d-%b'
 
-    	},
+        },
 
         yaxis: {
-            title:{
-                text:"<b>New Cases</b>",
-                font:{
-                    color:'darkslategrey'
+            title: {
+                text: "<b>New Cases</b>",
+                font: {
+                    color: 'darkslategrey'
                 }
             },
             showgrid: false,
             zeroline: false,
             anchor: 'x'
         },
-        yaxis2:{
-            title:{
-                text:"<b>Total Cases</b>",
-                font:{
-                    color:"darkslategrey"
+        yaxis2: {
+            title: {
+                text: "<b>Total Cases</b>",
+                font: {
+                    color: "darkslategrey"
                 }
             },
-            overlaying:'y',
+            overlaying: 'y',
             side: 'right',
             anchor: 'x',
             zeroline: false,
-            showgrid:false,
+            showgrid: false,
             rangemode: "tozero",
         },
         hovermode: "unified",
         title: "<b> COVID-19 Cases in Singapore</b>",
-        titlefont:{
+        titlefont: {
             size: 32,
-            family:"Helvetica Neue"
+            family: "Helvetica Neue"
         },
         plot_bgcolor: "#12232e",
         paper_bgcolor: "#12232e"
     }
 
 
-    Plotly.newPlot('chart', [traces[0],traces2[0]], layout, {responsive:true});
+    Plotly.newPlot('chart', [traces[0], traces2[0]], layout, { responsive: true });
 
     var plotDiv = document.getElementById("chart");
 
@@ -163,11 +160,11 @@ function makePlotly(x, y,allRows, totalCasesList) {
 
         updateNewCases(index);
 
-        Plotly.Fx.hover('chart',[
-            {curveNumber:0, pointNumber: index},
-            {curveNumber:1, pointNumber: index}
+        Plotly.Fx.hover('chart', [
+            { curveNumber: 0, pointNumber: index },
+            { curveNumber: 1, pointNumber: index }
         ]);
-        
+
         for (var i = 0; i < allRows.length; i++) {
             colors[i] = barCol;
         };
