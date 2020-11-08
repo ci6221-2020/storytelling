@@ -18,6 +18,13 @@ h1 {
   font-weight: bold;
 }
 
+.v-center {
+  position: relative;
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}
+
 header {
   background: #203647;
   color: #FFFFFF;
