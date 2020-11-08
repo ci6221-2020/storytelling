@@ -1,4 +1,5 @@
 const dataset = "data/circuitbreaker.csv";
+
 const lineCol = 'darkslategrey';
 const barCol = 'rgba(255, 255, 255, 0.7);';
 const hoveredBarCol = '#007cc7';
@@ -60,7 +61,7 @@ function processData(allRows) {
 }
 
 function makePlotly(x, y, allRows, totalCasesList) {
-    
+
     var traces = [{
         x: x,
         y: y,
@@ -143,7 +144,8 @@ function makePlotly(x, y, allRows, totalCasesList) {
         title: "<b> COVID-19 Cases in Singapore</b>",
         titlefont: {
             size: 32,
-            family: "Helvetica Neue"
+            family: "Arial",
+            color: 'darkslategrey'
         },
         plot_bgcolor: "#12232e",
         paper_bgcolor: "#12232e"

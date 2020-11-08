@@ -144,7 +144,8 @@ function makePlotly(x, y, allRows, totalCasesList) {
         title: "<b> COVID-19 Cases in Singapore</b>",
         titlefont: {
             size: 32,
-            family: "Helvetica Neue"
+            family: "Arial",
+            color: 'darkslategrey'
         },
         plot_bgcolor: "#12232e",
         paper_bgcolor: "#12232e"
